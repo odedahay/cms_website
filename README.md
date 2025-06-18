@@ -16,7 +16,7 @@ Welcome to the CMS Blog project! This is a Content Management System (CMS) desig
 
 - **Frontend**: Angular (TypeScript, HTML, CSS)
 - **Backend**: Node.js with Express.js
-- **Database**: MongoDB (with Mongoose ORM)
+- **Database**: MYSQL (with Sequelize ORM)
 - **Other Tools**:
   - Sequelize for database modeling
   - TypeScript for type safety
