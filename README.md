@@ -23,6 +23,7 @@ Welcome to the CMS Blog project! This is a Content Management System (CMS) desig
   - Nodemon for development server monitoring
   - ts-node for running TypeScript directly
 
+```
 cms_website/
 ├── backend/          # Backend code (Node.js, Express.js)
 │   ├── src/          # Source code
@@ -32,7 +33,7 @@ cms_website/
 │   ├── src/          # Source code
 │   └── package.json  # Frontend dependencies
 └── README.md         # Project documentation
-
+```
 
 ## Future Enhancements
 - Add role-based access control (e.g., admin, editor, - viewer).
