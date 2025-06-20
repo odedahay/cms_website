@@ -1,6 +1,6 @@
 # CMS Blog - Built with the MEAN Stack
 
-Welcome to the CMS Blog project! This is a Content Management System (CMS) designed to provide a robust platform for creating, managing, and publishing blog posts. Built using the **MEAN Stack** (MongoDB, Express.js, Angular, and Node.js), this project demonstrates the power of full-stack JavaScript development.
+Welcome to the CMS Blog project! This is a Content Management System (CMS) designed to provide a robust platform for creating, managing, and publishing blog posts. Built using the **MEAN Stack** (MySQL, Express.js, Angular, and Node.js), this project demonstrates the power of full-stack JavaScript development.
 
 ## Features
 
@@ -25,7 +25,7 @@ Welcome to the CMS Blog project! This is a Content Management System (CMS) desig
 
 ```
 cms_website/
-├── backend/          # Backend code (Node.js, Express.js)
+├── backend/          # Backend code (Node.js, Express.js, Sequelize, Typescript, MySQL)
 │   ├── src/          # Source code
 │   ├── dist/         # Compiled TypeScript files
 │   └── package.json  # Backend dependencies
