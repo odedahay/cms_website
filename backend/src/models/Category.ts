@@ -1,18 +1,28 @@
-import { Column, Table, Model } from "sequelize-typescript";
+import { BelongsTo, Column, ForeignKey, Model, Table } from "sequelize-typescript";
+import { User } from "./User";
 
 @Table
-export class Category extends Model<Category> {
+export class Category extends Model<Category>{
+
 
     @Column({
         allowNull: false
     })
-    name: string = '';
-     @Column({
+    name: string=''
+
+    @Column({
         allowNull: false,
         unique: true
     })
-    slug: string = '';
+    slug: string=''
 
-    
 
+    @ForeignKey(()=>User)
+    @Column({
+        allowNull: false
+    })
+    userId?: number;
+
+    @BelongsTo(()=>User)
+    user?: User;
 }

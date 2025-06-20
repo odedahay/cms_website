@@ -1,7 +1,8 @@
-import { connection } from "./connection";
 
-connection.sync();
 
+import {connection} from './connection';
+
+connection.sync({force: true})
 
 export {
     connection

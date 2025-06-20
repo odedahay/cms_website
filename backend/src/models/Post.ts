@@ -1,42 +1,45 @@
-import { BelongsTo, BelongsToMany, Column, ForeignKey, HasMany, Model, Table } from "sequelize-typescript";
+import { AutoIncrement, BelongsTo, BelongsToMany, Column, ForeignKey, HasMany, Model, PrimaryKey, Table } from "sequelize-typescript";
 import { User } from "./User";
 import { Comment } from "./Comment";
 import { Tag } from "./Tag";
 import { PostTag } from "./PostTag";
 
+
 @Table
-export class Post extends Model<Post> {
+export class Post extends Model<Post>{
+
+
+
+    @Column({
+        allowNull: false
+    })
+    title: string = ''
 
 
     @Column({
         allowNull: false
     })
-    title: string = '';
+    content: string = ''
 
     @Column({
-        allowNull: false
+        allowNull: false,
+        unique: true
     })
-    content: string = '';
+    slug: string = ''
 
-    @Column({
-        allowNull: false
-    })
-    slug: string = '';
 
-    @ForeignKey(() => User)
+    @ForeignKey(()=>User)
     @Column({
         allowNull: false
     })
     userId?: number;
 
-    @BelongsTo(() => User)
+    @BelongsTo(()=>User)
     user?: User;
 
-    @HasMany(() => Comment)
-    comments?: Comment[] = [];
+    @HasMany(()=>Comment)
+    comments: Comment[] = []
 
-    @BelongsToMany(() => Tag, () => PostTag)
-    tags?: Tag[] = [];
-
-
+    @BelongsToMany(()=>Tag, ()=>PostTag)
+    tags: Tag[] = []
 }
