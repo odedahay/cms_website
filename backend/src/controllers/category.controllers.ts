@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { addCategory, getAllCategories, getCategoryById, getCategoryBySlug, updateCategory } from "../services/category.service";
+import { addCategory, deleteCategory, getAllCategories, getCategoryById, getCategoryBySlug, updateCategory } from "../services/category.service";
 import { generateSlug } from "../shared/general.util";
 import z from "zod";
 
@@ -60,4 +60,16 @@ export const updateCategoryController = async (req: Request, res: Response) =>{
     let updatedCategory = await updateCategory(name, slug, id);
 
     res.json(updatedCategory);
+}
+
+export const deleteCategoryController = async (req: Request, res: Response) => {
+    const {id} = req.body;
+    const category = await getCategoryById(id);
+    if(!category){
+        res.status(404).json({message: 'Category not found'})
+    }
+
+   await deleteCategory(id);
+
+   res.json(category)
 }

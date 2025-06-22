@@ -54,3 +54,16 @@ export async function getCategoryById(id: number){
 
     return category;
 }
+
+
+export async function deleteCategory(id: number){
+    const category = await Category.findByPk(id);
+    
+    if(!category){
+        throw new Error ('Category not found');
+    }
+
+    await category.destroy();
+
+    return category;
+}
